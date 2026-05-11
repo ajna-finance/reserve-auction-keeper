@@ -6,6 +6,16 @@ Reserve auctions are the mechanism by which Ajna "buys back and burns" its nativ
 
 Current status: funded strategy supports live execution. Mainnet uses a single-tx Flashbots bundle path, Base uses private RPC submission, and flash-arb now has an executor-backed dry-run/live path when a deployed executor and per-chain routes are configured. The Solidity fork suite now also locks in the current mainnet flash-arb topology constraint: the pinned USDC reserve-auction path can be quoted live, but it still reuses the locked AJNA/WETH flash pool on Uniswap V3, so a successful mainnet V3-only flash-arb route still depends on future liquidity topology.
 
+## Risk Disclaimer
+
+This software interacts with live blockchain networks and can move real assets. Use it at your own risk. It is provided for informational and operational purposes only and is not financial, investment, legal, tax, or security advice.
+
+Transactions are irreversible and may lose funds due to bugs, misconfiguration, smart contract vulnerabilities, oracle or pricing errors, RPC or relay failures, MEV, slippage, gas volatility, protocol changes, or operator error. Profit estimates are not guarantees.
+
+Use a dedicated hot wallet with only funds you are willing to lose. Start in dry-run mode, independently review and test your configuration, and actively monitor live execution.
+
+Repository placement under an Ajna-related GitHub organization does not mean that any foundation, protocol contributor, tokenholder, or repository maintainer operates your keeper, custodies your funds, provides investment advice, or guarantees any outcome. Unless a separate written agreement says otherwise, running this keeper is solely the operator's responsibility.
+
 ## How It Works
 
 1. **Discovers pools** by scanning the Ajna PoolFactory for all deployed pools whose quote token matches the configured whitelist (built-in defaults plus any per-chain overrides in `config.json`)
@@ -375,4 +385,4 @@ src/
 
 ## License
 
-MIT
+MIT. See [LICENSE](LICENSE).
