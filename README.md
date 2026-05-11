@@ -16,6 +16,8 @@ Use a dedicated hot wallet with only funds you are willing to lose. Start in dry
 
 Repository placement under an Ajna-related GitHub organization does not mean that any foundation, protocol contributor, tokenholder, or repository maintainer operates your keeper, custodies your funds, provides investment advice, or guarantees any outcome. Unless a separate written agreement says otherwise, running this keeper is solely the operator's responsibility.
 
+See [SECURITY.md](SECURITY.md) for audit status and security issue reporting.
+
 ## How It Works
 
 1. **Discovers pools** by scanning the Ajna PoolFactory for all deployed pools whose quote token matches the configured whitelist (built-in defaults plus any per-chain overrides in `config.json`)
